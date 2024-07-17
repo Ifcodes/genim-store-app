@@ -4,19 +4,28 @@ import "./swiper-styles.css";
 
 const Swiper = ({ images }: { images: Array<string> }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const visibleImagesCount = 5;
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   const handleNext = () => {
     if (currentIndex < images.length - visibleImagesCount) {
-      setCurrentIndex(currentIndex + 1);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex(currentIndex + 1);
+        setIsTransitioning(false);
+      }, 700); // Match the CSS transition duration
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex(currentIndex - 1);
+        setIsTransitioning(false);
+      }, 700); // Match the CSS transition duration
     }
   };
 
@@ -44,7 +53,7 @@ const Swiper = ({ images }: { images: Array<string> }) => {
     }
   };
 
-  console.log({ currentIndex });
+  console.log({ currentIndex, images, isTransitioning });
 
   return (
     <div
@@ -61,8 +70,11 @@ const Swiper = ({ images }: { images: Array<string> }) => {
           <img
             key={index}
             src={image}
-            className={`image image-${index}`}
+            className={`image image-${index} ${
+              isTransitioning ? "transitioning" : ""
+            }`}
             alt={`Image ${index}`}
+            draggable={false}
           />
         ))}
       </div>
