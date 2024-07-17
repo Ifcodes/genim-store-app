@@ -65,18 +65,25 @@ const Swiper = ({ images }: { images: Array<string> }) => {
       <button onClick={handlePrev} disabled={currentIndex === 0}>
         Left
       </button>
-      <div className="images-container">
-        {getVisibleImages().map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            className={`image image-${index} ${
-              isTransitioning ? "transitioning" : ""
-            }`}
-            alt={`Image ${index}`}
-            draggable={false}
-          />
-        ))}
+      <div className="img-wrapper">
+        <div
+          className="images-container"
+          style={{
+            translate: `${-20 * currentIndex}%`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div className="container">
+              <img
+                key={index}
+                src={image}
+                className={`image `}
+                alt={`Image ${index}`}
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <button
         onClick={handleNext}
