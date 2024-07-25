@@ -3,7 +3,7 @@
 }
 
 .img-wrapper {
-  @apply w-[90%] h-full bg-off-white overflow-hidden py-0 p-4;
+  @apply w-[90%] h-full bg-white overflow-hidden py-0 p-4;
 }
 
 .images-container {
