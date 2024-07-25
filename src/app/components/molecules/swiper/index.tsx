@@ -1,21 +1,7 @@
 "use client";
-import React, {
-  TouchEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { TouchEvent, useEffect, useRef, useState } from "react";
 import "./swiper-styles.css";
-import image1 from "@/public/img1.jpg";
-import image2 from "@/public/img2.jpg";
-import image3 from "@/public/img3.avif";
-import image4 from "@/public/img4.avif";
-import image5 from "@/public/img5.avif";
-import image6 from "@/public/img6.avif";
-import image7 from "@/public/img7.avif";
-import image8 from "@/public/img8.jpg";
+import { Button } from "../../atoms/button";
 
 const Swiper = ({ images }: { images: Array<string> }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -65,13 +51,6 @@ const Swiper = ({ images }: { images: Array<string> }) => {
     }
   };
 
-  console.log({
-    currentIndex,
-    images,
-    isTransitioning,
-    previous: images.length,
-  });
-
   return (
     <div
       className="image-slider"
@@ -79,9 +58,9 @@ const Swiper = ({ images }: { images: Array<string> }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <button onClick={handlePrev} disabled={currentIndex === 0}>
+      <Button onClick={handlePrev} disabled={currentIndex === 0}>
         Left
-      </button>
+      </Button>
       <div className="img-wrapper">
         <div
           className="images-container"
@@ -105,12 +84,12 @@ const Swiper = ({ images }: { images: Array<string> }) => {
           })}
         </div>
       </div>
-      <button
+      <Button
         onClick={handleNext}
         disabled={currentIndex >= images.length - visibleImagesCount}
       >
         Right
-      </button>
+      </Button>
     </div>
   );
 };

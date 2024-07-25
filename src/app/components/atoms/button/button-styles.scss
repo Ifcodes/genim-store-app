@@ -1,0 +1,33 @@
+.button {
+  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-xl cursor-pointer hover:border-primary-100 font-medium flex items-center relative duration-['0.4s'];
+
+  &::after {
+    @apply block absolute top-0 left-0 rounded-xl opacity-0 w-full h-full transition-all duration-500;
+    box-shadow: 0 0 10px 40px #fac79a;
+    content: "";
+  }
+
+  &:active::after {
+    @apply absolute top-0 left-0 opacity-45 rounded-xl;
+    box-shadow: 0 0 0 0 #fac79a;
+    transition: 0s;
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+  svg {
+    @apply mx-1;
+  }
+}
+
+.primary-button {
+  @extend .button;
+  @apply bg-primary-100 text-white hover:bg-primary-50;
+}
+
+.secondary-button {
+  @extend .button;
+  @apply bg-transparent border border-solid border-primary-100 text-primary-100 hover:text-primary-50;
+}

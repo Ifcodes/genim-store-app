@@ -1,5 +1,5 @@
 "use client";
-import Swiper from "./components/swiper";
+import Swiper from "./components/molecules/swiper";
 import { useFetchProducts } from "./hooks/useFetchProducts";
 
 export default function Home() {
