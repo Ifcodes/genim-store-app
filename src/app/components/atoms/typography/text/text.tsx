@@ -8,7 +8,7 @@ interface ITextProps
     HTMLParagraphElement
   > {
   text: string;
-  otherClasses: string;
+  otherClasses?: string;
   //   variant: "p" | "span";
 }
 const Text = ({ text, otherClasses, ...props }: ITextProps) => {

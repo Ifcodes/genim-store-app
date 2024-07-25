@@ -9,15 +9,15 @@ interface ITitleProps
     HTMLHeadingElement
   > {
   text: string;
-  variant: "h1" | "h2" | "h3" | "h4";
-  fontFamily: "playfairDisplay" | "poppins";
+  variant?: "h1" | "h2" | "h3" | "h4";
+  fontFamily?: "playfairDisplay" | "poppins";
   otherClasses?: string;
 }
 
 const Title = ({
-  text = "h1",
-  variant,
-  fontFamily,
+  text,
+  variant = "h1",
+  fontFamily = "poppins",
   otherClasses,
   ...props
 }: ITitleProps) => {

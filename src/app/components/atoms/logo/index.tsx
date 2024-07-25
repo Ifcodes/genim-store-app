@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Title from "../typography/title";
 
 const Genim = () => {
-  return (
-    <h1>Genim</h1>
-  )
-}
+  return <Title text="Genim Store" fontFamily="playfairDisplay" />;
+};
 
-export default Genim
+export default Genim;

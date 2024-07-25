@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         primary: "#09091A",
         grey1: "#333333",
+        transparentGrey1: "#33333366",
       },
     },
   },
