@@ -1,7 +1,8 @@
 "use client";
 import React, { TouchEvent, useEffect, useRef, useState } from "react";
-import "./swiper-styles.css";
+import "./swiper-styles.scss";
 import { Button } from "../../atoms/button";
+import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi";
 
 const Swiper = ({ images }: { images: Array<string> }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,9 +59,6 @@ const Swiper = ({ images }: { images: Array<string> }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <Button onClick={handlePrev} disabled={currentIndex === 0}>
-        Left
-      </Button>
       <div className="img-wrapper">
         <div
           className="images-container"
@@ -87,12 +85,41 @@ const Swiper = ({ images }: { images: Array<string> }) => {
           })}
         </div>
       </div>
-      <Button
-        onClick={handleNext}
-        disabled={currentIndex >= images.length - visibleImagesCount}
-      >
-        Right
-      </Button>
+      <div className="flex justify-between items-center px-8 ">
+        <div className="flex space-x-8 items-center">
+          <button
+            className="icon-btn"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+          >
+            <PiCaretLeftLight size={32} />
+          </button>
+          <button
+            className="icon-btn"
+            onClick={handleNext}
+            disabled={currentIndex >= images.length - visibleImagesCount}
+          >
+            <PiCaretRightLight size={32} />
+          </button>
+        </div>
+        <div className="flex space-x-4 items-center">
+          <Button
+            buttonType="secondary"
+            otherClasses="w-[8rem] text-center justify-center uppercase rounded-full"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+          >
+            Look 01
+          </Button>
+          <Button
+            // otherClasses=""
+            onClick={handleNext}
+            disabled={currentIndex >= images.length - visibleImagesCount}
+          >
+            Shop Look
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };

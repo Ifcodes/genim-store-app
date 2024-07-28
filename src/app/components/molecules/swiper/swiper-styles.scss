@@ -1,13 +1,14 @@
 .image-slider {
-  @apply w-[80vw] h-screen flex items-center justify-between;
+  @apply w-[70vw] h-screen;
 }
 
 .img-wrapper {
-  @apply w-[90%] h-full bg-white overflow-hidden py-0 p-4;
+  @apply w-[100%] h-[90%] bg-white overflow-hidden py-0 p-4 z-0;
+  // height: calc(100% - 5rem);
 }
 
 .images-container {
-  @apply min-w-full h-[80%] flex items-end shrink-0 transition-all duration-700;
+  @apply min-w-full h-[90%] mt-[2%] flex items-end shrink-0 transition-all duration-700;
 }
 
 .container {
@@ -62,10 +63,16 @@ img {
   @apply w-[24%] h-[90%];
 }
 
-button {
-  width: max-content;
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-  padding: 1rem 0.7rem;
+.icon-btn {
+  @apply rounded-full w-10 h-10 text-white px-[0.7rem] py-4 flex justify-center items-center bg-primary;
 }
+
+// .btn-left {
+//   @extend button;
+//   @apply absolute left-4 z-10;
+// }
+
+// .btn-right {
+//   @extend button;
+//   @apply absolute right-4 z-10;
+// }
