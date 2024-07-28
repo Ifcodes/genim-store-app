@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "playfair-display": ["Playfair Display Variable"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,6 +19,7 @@ const config: Config = {
       colors: {
         primary: "#09091A",
         grey1: "#333333",
+        offWhite: "#F6F6F6",
         transparentGrey1: "#33333366",
       },
     },

@@ -1,0 +1,8 @@
+.main-layout-wrapper {
+  @apply relative left-0 top-0 w-screen h-screen p-4;
+
+  main {
+    @apply w-full;
+    height: calc(100vh - 6rem);
+  }
+}

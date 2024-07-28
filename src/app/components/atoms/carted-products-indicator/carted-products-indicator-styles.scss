@@ -1,0 +1,7 @@
+.carted-products-wrapper {
+  @apply relative;
+
+  .badge {
+    @apply min-w-2 min-h-max flex justify-center items-center bg-black rounded-full text-white text-[10px] absolute top-[-4px] right-[-8px] py-[1px] px-[4px];
+  }
+}

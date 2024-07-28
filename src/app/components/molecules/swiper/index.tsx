@@ -71,7 +71,10 @@ const Swiper = ({ images }: { images: Array<string> }) => {
           {images.map((image, index) => {
             // console.log({ currentIndexCopy });
             return (
-              <div className={`container image-${index - currentIndex}  `}>
+              <div
+                key={image}
+                className={`container image-${index - currentIndex}  `}
+              >
                 <img
                   key={index}
                   src={image}

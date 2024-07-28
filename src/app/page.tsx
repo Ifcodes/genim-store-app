@@ -1,4 +1,5 @@
 "use client";
+import MainDashboardLayout from "./components/layouts/main-dashboard-layout";
 import Swiper from "./components/molecules/swiper";
 import { useFetchProducts } from "./hooks/useFetchProducts";
 
@@ -20,5 +21,9 @@ export default function Home() {
     return <div>{error}</div>;
   }
 
-  return <Swiper images={imgs} />;
+  return (
+    <MainDashboardLayout>
+      <Swiper images={imgs} />
+    </MainDashboardLayout>
+  );
 }

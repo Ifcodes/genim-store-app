@@ -23,12 +23,12 @@ const Title = ({
 }: ITitleProps) => {
   const titleFonts = {
     poppins: poppins.className,
-    playfairDisplay: poppins.className,
+    playfairDisplay: playfairDisplay.className,
   };
 
   if (variant === "h4")
     return (
-      <h4 className={clsx(titleFonts[fontFamily], otherClasses)} {...props}>
+      <h4 className={clsx(titleFonts.playfairDisplay, otherClasses)} {...props}>
         {text}
       </h4>
     );
@@ -48,7 +48,7 @@ const Title = ({
     );
 
   return (
-    <h1 className={clsx(titleFonts[fontFamily], otherClasses)} {...props}>
+    <h1 className={clsx(otherClasses)} {...props}>
       {text}
     </h1>
   );
