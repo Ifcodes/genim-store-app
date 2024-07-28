@@ -1,29 +1,13 @@
 "use client";
 import MainDashboardLayout from "./components/layouts/main-dashboard-layout";
 import Swiper from "./components/molecules/swiper";
+import ShopLooks from "./components/organisms/shop-looks";
 import { useFetchProducts } from "./hooks/useFetchProducts";
 
 export default function Home() {
-  const { products, images, error } = useFetchProducts();
-
-  const imgs = [
-    "/img1.jpg",
-    "/img2.jpg",
-    "/img3.avif",
-    "/img4.avif",
-    // "/img5.avif",
-    "/img6.avif",
-    "/img7.avif",
-    "/img8.jpg",
-  ];
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
   return (
     <MainDashboardLayout>
-      <Swiper images={imgs} />
+      <ShopLooks />
     </MainDashboardLayout>
   );
 }

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,9 +21,12 @@
 } */
 
 body {
+  width: 100vw;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-end-rgb));
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 @layer utilities {

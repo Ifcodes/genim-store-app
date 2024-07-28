@@ -1,0 +1,4 @@
+.shop-looks-wrapper {
+  @apply w-full h-full grid gap-4 overflow-hidden;
+  grid-template-columns: 1fr 30%;
+}

@@ -1,14 +1,14 @@
 .image-slider {
-  @apply w-[70vw] h-screen;
+  @apply w-full h-screen bg-grey-2;
 }
 
 .img-wrapper {
-  @apply w-[100%] h-[90%] bg-white overflow-hidden py-0 p-4 z-0;
+  @apply w-[100%] h-[85%] bg-transparent overflow-hidden z-0;
   // height: calc(100% - 5rem);
 }
 
 .images-container {
-  @apply min-w-full h-[90%] mt-[2%] flex items-end shrink-0 transition-all duration-700;
+  @apply min-w-full h-[90%] flex items-end shrink-0 transition-all duration-700;
 }
 
 .container {

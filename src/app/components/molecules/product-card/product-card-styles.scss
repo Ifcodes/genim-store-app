@@ -1,0 +1,15 @@
+.product-card-wrapper {
+  @apply w-[95%] mr-auto mb-4;
+
+  .product-image-container {
+    @apply bg-grey-2 w-full h-[350px] py-4 relative left-0 top-0;
+
+    .like-icon {
+      @apply absolute left-4 top-4;
+    }
+
+    img {
+      @apply object-contain;
+    }
+  }
+}

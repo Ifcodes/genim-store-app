@@ -18,9 +18,12 @@ const config: Config = {
       },
       colors: {
         primary: "#09091A",
-        grey1: "#333333",
+        grey: {
+          1: "#333333",
+          2: "#F8F8F8",
+          transparent: "#33333366",
+        },
         offWhite: "#F6F6F6",
-        transparentGrey1: "#33333366",
       },
     },
   },
