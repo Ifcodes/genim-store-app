@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Text from "../../atoms/typography/text/text";
 import { Button } from "../../atoms/button";
 import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
@@ -23,13 +24,26 @@ const Pagenation = ({
   const pageList = Array(pages);
 
   const handleNext = () => {
-    if (currentPage > pages)
-  }
+    if (currentPage >= pages - 1) return;
+
+    handleCurrentPage(currentPage + 1);
+  };
+
+  const handlePrev = () => {
+    if (currentPage <= 1) return;
+
+    handleCurrentPage(currentPage - 1);
+  };
+
   return (
     <div className="pagination-wrapper">
       <Text text={`${totalShowing} of ${totalItems}`} otherClasses="text-sm" />
       <div>
-        <Button iconBefore={<BiCaretLeft />} otherClasses="border-none p-0">
+        <Button
+          onClick={handlePrev}
+          iconBefore={<BiCaretLeft />}
+          otherClasses="border-none p-0"
+        >
           Prev
         </Button>
         {pageList.map((_p, idx) => (
@@ -42,7 +56,11 @@ const Pagenation = ({
             {idx + 1}
           </IconButton>
         ))}
-        <Button iconBefore={<BiCaretRight />} otherClasses="border-none p-0">
+        <Button
+          onClick={handleNext}
+          iconBefore={<BiCaretRight />}
+          otherClasses="border-none p-0"
+        >
           Next
         </Button>
       </div>
