@@ -5,6 +5,7 @@ import { Button } from "../../atoms/button";
 import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
 import IconButton from "../../atoms/icon-button";
 import clsx from "clsx";
+import "./pagenation-styles.scss";
 
 interface IPaginationProps {
   totalPerPage: number;
@@ -21,7 +22,7 @@ const Pagenation = ({
   handleCurrentPage,
 }: IPaginationProps) => {
   const pages = totalItems / totalPerPage;
-  const pageList = Array(pages);
+  const pageList = Array(pages).fill("");
 
   const handleNext = () => {
     if (currentPage >= pages - 1) return;
@@ -35,14 +36,17 @@ const Pagenation = ({
     handleCurrentPage(currentPage - 1);
   };
 
+  console.log({ pageList });
+
   return (
-    <div className="pagination-wrapper">
+    <div className="pagenation-wrapper">
       <Text text={`${totalShowing} of ${totalItems}`} otherClasses="text-sm" />
-      <div>
+      <div className="pages-container">
         <Button
+          buttonType="secondary"
           onClick={handlePrev}
           iconBefore={<BiCaretLeft />}
-          otherClasses="border-none p-0"
+          otherClasses="border-0 p-0 bg-transparent"
         >
           Prev
         </Button>
@@ -57,9 +61,10 @@ const Pagenation = ({
           </IconButton>
         ))}
         <Button
+          buttonType="secondary"
           onClick={handleNext}
           iconBefore={<BiCaretRight />}
-          otherClasses="border-none p-0"
+          otherClasses="border-0 p-0 bg-transparent"
         >
           Next
         </Button>
